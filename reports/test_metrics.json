@@ -1,0 +1,13 @@
+{
+    "accuracy": 0.7906843013225991,
+    "precision": 0.826530612244898,
+    "recall": 0.7397260273972602,
+    "f1": 0.7807228915662651,
+    "roc_auc": 0.8925809668936544,
+    "best_cv_f1": 0.7870726139787622,
+    "best_params": {
+        "model__max_depth": null,
+        "model__min_samples_split": 5,
+        "model__n_estimators": 200
+    }
+}
