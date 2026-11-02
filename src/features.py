@@ -35,7 +35,7 @@ def add_features(df: pd.DataFrame) -> pd.DataFrame:
 
     df["ServicesUsed"] = (df[spending_columns] > 0).sum(axis=1)
 
-    df["Surname"] = df["Name"].str.split().str[0]
+    # df["Surname"] = df["Name"].str.split().str[0]
     # df["Surname"] = df["Surname"].astype("category")
 
     df.drop(columns=["PassengerId", "Cabin", "Name"], inplace=True)

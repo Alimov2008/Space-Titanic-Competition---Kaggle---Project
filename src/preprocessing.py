@@ -13,13 +13,15 @@ def build_preprocessor(X: DataFrame) -> ColumnTransformer:
     numeric_features = [c for c in X.columns if c not in categorical_features]
 
     numeric_pipeline = Pipeline(
-        [("imputer", SimpleImputer(strategy="median")), ("scaler", StandardScaler())]
+        [
+            ("passthrough", "passthrough"),
+        ]
     )
 
     categorical_pipeline = Pipeline(
         [
             ("imputer", SimpleImputer(strategy="most_frequent")),
-            ("encoder", OneHotEncoder(handle_unknown="ignore")),
+            ("encoder", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
         ]
     )
 
